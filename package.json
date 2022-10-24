@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "watch": "esbuild --watch --bundle --minify --sourcemap src/index.ts --outfile=public/build/index.js",
+    "build": "rm -rf public/build & esbuild --bundle src/index.ts --outfile=public/build/index.js",
+    "serve": "npx browser-sync start --server \"public\" --files \"public\"",
+    "dev": "run-p watch serve"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.8.4"
+  },
+  "name": "triangle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "esbuild": "^0.15.12"
+  }
+}
