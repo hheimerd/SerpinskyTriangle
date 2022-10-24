@@ -3,9 +3,11 @@
     "watch": "esbuild --watch --bundle --minify --sourcemap src/index.ts --outfile=public/build/index.js",
     "build": "rm -rf public/build & esbuild --bundle src/index.ts --outfile=public/build/index.js",
     "serve": "npx browser-sync start --server \"public\" --files \"public\"",
-    "dev": "run-p watch serve"
+    "dev": "run-p watch serve",
+    "deploy": "npm run build && gh-pages -d public"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.8.4"
   },
